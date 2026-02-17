@@ -4,6 +4,7 @@ Hotones/build/libraylib.dll
 Hotones/build/libstdc++-6.dll
 Hotones/build/libwinpthread-1.dll
 Hotones/build/Hotones.exe
+build/
 Textures/
 maps/*.b0
 maps/*.b1

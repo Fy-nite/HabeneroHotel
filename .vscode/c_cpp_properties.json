@@ -15,7 +15,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.26100.0",
-            "compilerPath": "C:/msys64/usr/bin/g++.exe",
+            "compilerPath": "C:\\msys64\\ucrt64\\bin\\g++",
             "cStandard": "c23",
             "cppStandard": "c++26"
         }

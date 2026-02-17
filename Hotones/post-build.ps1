@@ -1,1 +1,1 @@
-cp build/Hotones.dll ../out/hotones.dll
+cp -r ../assets build/assets

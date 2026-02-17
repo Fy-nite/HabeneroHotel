@@ -24,10 +24,9 @@ build:
   futReadOnly: []
   futExtraArgs: []
   extraArgs:
-  - ' -Isrc/include -lraylib -std=c++20'
+  - ' -Isrc/include -lraylib -std=c++20 '
   jobs: 12
 dependencies: {}
 dependencyCategories: {}
 devDependencies: {}
-scripts:
-  run: meow build ; ./build/Hotones.exe
+scripts: {}

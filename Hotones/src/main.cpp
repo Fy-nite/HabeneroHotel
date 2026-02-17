@@ -20,6 +20,8 @@ static void DrawLevel(void);
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
+
+
 int main(void)
 {
     // Initialization
@@ -28,6 +30,7 @@ int main(void)
     const int screenHeight = 768;
 
     InitWindow(screenWidth, screenHeight, "Habanero Hotel - Hotones");
+
     // Enable CRT debug heap checks on Windows to catch heap corruption early
 #if defined(_WIN32) && defined(_DEBUG)
     int dbgFlags = _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG);
