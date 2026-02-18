@@ -281,6 +281,13 @@ struct NetworkManager::Impl {
         for (auto& slot : clients) {
             if (slot.active && slot.id == pkt.header.playerId &&
                 slot.addr.sin_addr.s_addr == from.sin_addr.s_addr) {
+                // Keep a server-side snapshot so the hosting player can
+                // render remote clients via GetRemotePlayers().
+                auto& rp  = remotePlayers[pkt.header.playerId];
+                rp.id     = pkt.header.playerId;
+                rp.posX   = pkt.posX; rp.posY = pkt.posY; rp.posZ = pkt.posZ;
+                rp.rotX   = pkt.rotX; rp.rotY = pkt.rotY;
+                rp.active = true;
                 Server_Broadcast(reinterpret_cast<const uint8_t*>(&pkt),
                                  sizeof(pkt), pkt.header.playerId);
                 return;
@@ -476,13 +483,21 @@ bool NetworkManager::IsConnected() const { return m_impl->connected; }
 
 void NetworkManager::SendPlayerUpdate(float px, float py, float pz,
                                        float rotX, float rotY) {
-    if (!m_impl->connected || m_impl->mode != Mode::Client) return;
     PlayerUpdatePacket pkt{};
-    pkt.header.type     = PacketType::PLAYER_UPDATE;
-    pkt.header.playerId = m_impl->localId;
+    pkt.header.type = PacketType::PLAYER_UPDATE;
     pkt.posX = px; pkt.posY = py; pkt.posZ = pz;
     pkt.rotX = rotX; pkt.rotY = rotY;
-    m_impl->SendRaw(m_impl->serverAddr, &pkt, sizeof(pkt));
+
+    if (m_impl->mode == Mode::Client && m_impl->connected) {
+        pkt.header.playerId = m_impl->localId;
+        m_impl->SendRaw(m_impl->serverAddr, &pkt, sizeof(pkt));
+    } else if (m_impl->mode == Mode::Server) {
+        // Broadcast the host's position to all connected clients.
+        // Player ID 0 is reserved for the server/host; clients treat it
+        // as any other remote player and render it normally.
+        pkt.header.playerId = 0;
+        m_impl->Server_Broadcast(reinterpret_cast<const uint8_t*>(&pkt), sizeof(pkt));
+    }
 }
 
 // ── Shared ────────────────────────────────────────────────────────────────────

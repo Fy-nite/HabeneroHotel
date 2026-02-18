@@ -155,7 +155,9 @@ int main(int argc, char** argv)
         // ── Network tick ────────────────────────────────────────────────────
         netMgr.Update();
         netSendTimer += GetFrameTime();
-        if (netMgr.IsConnected() && netSendTimer >= NET_SEND_INTERVAL) {
+        bool netActive = netMgr.IsConnected()
+                       || netMgr.GetMode() == Hotones::Net::NetworkManager::Mode::Server;
+        if (netActive && netSendTimer >= NET_SEND_INTERVAL) {
             netSendTimer = 0.f;
             // Send the GameScene's own player state (not the leftover main.cpp player)
             Hotones::GameScene* gsNet = dynamic_cast<Hotones::GameScene*>(sceneMgr.GetCurrent());
