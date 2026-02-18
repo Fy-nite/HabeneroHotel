@@ -37,6 +37,11 @@ void Player::Update() {
     bool crouching = IsKeyDown(KEY_LEFT_CONTROL);
     bool jumpPressed = IsKeyPressed(KEY_SPACE);
 
+    TraceLog(LOG_INFO, "Player::UpdateBody input side=%d forward=%d jumpPressed=%d grounded=%d pos=(%f,%f,%f) vel=(%f,%f,%f)",
+             sideway, forward, jumpPressed ? 1 : 0, body.isGrounded ? 1 : 0,
+             body.position.x, body.position.y, body.position.z,
+             body.velocity.x, body.velocity.y, body.velocity.z);
+
     UpdateBody(sideway, forward, jumpPressed, crouching);
 
     float delta = GetFrameTime();
@@ -93,8 +98,11 @@ void Player::UpdateBody(char side, char forward, bool jumpPressed, bool crouchHo
     //     wasJumpHeld = IsKeyDown(KEY_SPACE);
     // } else {
         if (body.isGrounded && jumpPressed) {
+            TraceLog(LOG_INFO, "Player::UpdateBody jump triggered: setting velocity.y from %f to %f", body.velocity.y, JUMP_FORCE);
             body.velocity.y = JUMP_FORCE;
             body.isGrounded = false;
+        } else if (jumpPressed && !body.isGrounded) {
+            TraceLog(LOG_INFO, "Player::UpdateBody jump pressed but not grounded (ignored)");
         }
     // }
 
@@ -171,6 +179,7 @@ void Player::UpdateBody(char side, char forward, bool jumpPressed, bool crouchHo
             if (hitNormal.y > 0.5f) {
                 body.isGrounded = true;
                 body.velocity.y = 0.0f;
+                TraceLog(LOG_INFO, "Player::UpdateBody grounded via sweep hit (y=%f) at pos=(%f,%f,%f)", hitNormal.y, curr.x, curr.y, curr.z);
             }
 
             // attempt a few iterations of sliding resolution
@@ -210,6 +219,7 @@ void Player::UpdateBody(char side, char forward, bool jumpPressed, bool crouchHo
         if (pushed) {
             // If ResolveSphereCollision pushed us upwards, consider grounded.
             // Conservative: zero vertical velocity to avoid tunneling.
+            TraceLog(LOG_INFO, "Player::UpdateBody ResolveSphereCollision pushed player to pos=(%f,%f,%f)", body.position.x, body.position.y, body.position.z);
             body.velocity.y = 0.0f;
             body.isGrounded = true;
         }

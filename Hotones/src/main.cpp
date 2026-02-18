@@ -5,6 +5,8 @@
 #include <GFX/LoadingScene.hpp>
 #include <GFX/SimpleScene.hpp>
 #include <GFX/GameScene.hpp>
+#include <imgui/imgui.h>
+#include <imgui/rlImGui.h>
 #include <SFX/AudioSystem.hpp>
 #include <Assets/AssetLoader.hpp>
 #include <filesystem>
@@ -70,13 +72,17 @@ int main(void)
     DisableCursor();        // Limit cursor to relative movement inside the window
 
     SetTargetFPS(60);       // Set our game to run at 60 frames-per-second
+    // Initialize rlImGui (optional system-installed integration)
+    rlImGuiSetup(true);
     //--------------------------------------------------------------------------------------
+    bool showDebugUI = false;
     
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
+        if (IsKeyPressed(KEY_F1)) showDebugUI = !showDebugUI;
         player.Update();
         sceneMgr.Update();
 
@@ -94,6 +100,31 @@ int main(void)
             // Let scene manager draw current scene (GameScene handles its own 3D camera)
             sceneMgr.Draw();
 
+            // ImGui debug overlay
+            if (showDebugUI) {
+                rlImGuiBegin();
+                ImGui::Begin("Debug (F1 to toggle)");
+                ImGui::Text("Scene: %s", sceneMgr.GetCurrentName().c_str());
+                Hotones::Scene *cur = sceneMgr.GetCurrent();
+                if (cur) {
+                    Hotones::GameScene *gs = dynamic_cast<Hotones::GameScene*>(cur);
+                    if (gs) {
+                        // Player info
+                        Hotones::Player *p = gs->GetPlayer();
+                        Vector3 pos = p->body.position;
+                        Vector3 vel = p->body.velocity;
+                        ImGui::Text("Player pos: %.3f, %.3f, %.3f", pos.x, pos.y, pos.z);
+                        ImGui::Text("Player vel: %.3f, %.3f, %.3f", vel.x, vel.y, vel.z);
+                        bool worldDbg = gs->IsWorldDebug();
+                        if (ImGui::Checkbox("World debug (F2)", &worldDbg)) {
+                            gs->SetWorldDebug(worldDbg);
+                        }
+                    }
+                }
+                ImGui::End();
+                rlImGuiEnd();
+            }
+
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
@@ -102,6 +133,8 @@ int main(void)
     //--------------------------------------------------------------------------------------
     // Shutdown audio before closing the window
     Ho_tones::ShutdownAudioSystem();
+
+    rlImGuiShutdown();
 
     CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------

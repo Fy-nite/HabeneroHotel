@@ -28,6 +28,8 @@ public:
 
     // Debug drawing: draw per-mesh AABBs and last sweep info
     void DrawDebug() const;
+    // Draw per-mesh AABBs/wires using the specified color (keeps visual mapping identical to DrawDebug)
+    void DrawMeshBoundingBoxes(Color color) const;
     void SetDebug(bool enabled) { debug = enabled; }
     bool IsDebug() const { return debug; }
 

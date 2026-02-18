@@ -142,8 +142,22 @@ bool CollidableModel::ResolveSphereCollision(Vector3 &center, float radius) {
             if (dist > 0.0001f) {
                 push = Vector3Scale(diff, (radius - dist) / dist);
             } else {
-                // center inside box exactly; push up
-                push = (Vector3){ 0.0f, radius + 0.001f, 0.0f };
+                // center is inside the box. Compute shortest axis to push out along
+                // using distances to each face, like SweepSphere's normal selection.
+                float dxMin = fabsf(center.x - mb.min.x);
+                float dxMax = fabsf(center.x - mb.max.x);
+                float dyMin = fabsf(center.y - mb.min.y);
+                float dyMax = fabsf(center.y - mb.max.y);
+                float dzMin = fabsf(center.z - mb.min.z);
+                float dzMax = fabsf(center.z - mb.max.z);
+                float minDist = dxMin; push = (Vector3){ -1,0,0 };
+                if (dxMax < minDist) { minDist = dxMax; push = (Vector3){ 1,0,0 }; }
+                if (dyMin < minDist) { minDist = dyMin; push = (Vector3){ 0,-1,0 }; }
+                if (dyMax < minDist) { minDist = dyMax; push = (Vector3){ 0,1,0 }; }
+                if (dzMin < minDist) { minDist = dzMin; push = (Vector3){ 0,0,-1 }; }
+                if (dzMax < minDist) { minDist = dzMax; push = (Vector3){ 0,0,1 }; }
+                // push out by radius plus small epsilon to avoid re-penetration
+                push = Vector3Scale(push, radius + 0.001f);
             }
             center = Vector3Add(center, push);
             collided = true;
@@ -191,6 +205,8 @@ static bool RayAABBIntersect(const Vector3 &o, const Vector3 &d, const BoundingB
 }
 
 bool Hotones::CollidableModel::SweepSphere(const Vector3 &start, const Vector3 &end, float radius, Vector3 &hitPos, Vector3 &hitNormal, float &t) {
+    TraceLog(LOG_INFO, "CollidableModel::SweepSphere start=(%f,%f,%f) end=(%f,%f,%f) radius=%f",
+             start.x, start.y, start.z, end.x, end.y, end.z, radius);
     Vector3 d = Vector3Subtract(end, start);
     float segLen = Vector3Length(d);
     if (segLen <= 1e-8f) return false;
@@ -223,8 +239,9 @@ bool Hotones::CollidableModel::SweepSphere(const Vector3 &start, const Vector3 &
         float localT;
         int axis;
         if (!RayAABBIntersect(start, dir, mb, localT, axis)) continue;
-        // normalize t by segment length
-        float tNorm = localT / segLen;
+        // RayAABBIntersect returns t in the same parameterization as 'dir' (point = start + dir * t),
+        // so when 'dir' is the full segment (end-start) the returned t is already normalized [0,1].
+        float tNorm = localT;
         if (tNorm >= 0.0f && tNorm <= 1.0f) {
             if (tNorm < bestT) {
                 bestT = tNorm;
@@ -236,6 +253,7 @@ bool Hotones::CollidableModel::SweepSphere(const Vector3 &start, const Vector3 &
     }
 
     if (!found) {
+        TraceLog(LOG_INFO, "CollidableModel::SweepSphere no AABB hit for segment");
         // store last sweep
         lastSweepHit = false;
         lastSweepStart = start;
@@ -265,6 +283,8 @@ bool Hotones::CollidableModel::SweepSphere(const Vector3 &start, const Vector3 &
     if (dzMax < minDist) { minDist = dzMax; hitNormal = (Vector3){ 0,0,1 }; }
 
     t = bestT;
+    TraceLog(LOG_INFO, "CollidableModel::SweepSphere hit t=%f pos=(%f,%f,%f) normal=(%f,%f,%f)",
+             t, hitPos.x, hitPos.y, hitPos.z, hitNormal.x, hitNormal.y, hitNormal.z);
 
     // store last sweep
     lastSweepHit = true;
@@ -302,6 +322,19 @@ void Hotones::CollidableModel::DrawDebug() const {
     }
 }
 
+void Hotones::CollidableModel::DrawMeshBoundingBoxes(Color color) const {
+    if (model.meshCount > 0 && model.meshes != NULL) {
+        for (int i = 0; i < model.meshCount; ++i) {
+            BoundingBox mb = GetMeshBoundingBox(model.meshes[i]);
+            mb.min = Vector3Add(mb.min, position);
+            mb.max = Vector3Add(mb.max, position);
+            DrawBoundingBox(mb, Fade(color, 0.9f));
+            DrawCubeWires((Vector3){ (mb.min.x+mb.max.x)/2.0f, (mb.min.y+mb.max.y)/2.0f, (mb.min.z+mb.max.z)/2.0f },
+                          mb.max.x - mb.min.x, mb.max.y - mb.min.y, mb.max.z - mb.min.z, color);
+        }
+    }
+}
+
 void CollidableModel::UpdateBoundingBox() {
     // Compute union of all mesh bounding boxes and offset by model position
     if (model.meshCount > 0 && model.meshes != NULL) {
@@ -318,6 +351,9 @@ void CollidableModel::UpdateBoundingBox() {
         }
         // apply model position offset
         Vector3 offset = position;
+        // Debug: print meshCount and computed accum bbox
+        TraceLog(LOG_INFO, "CollidableModel: UpdateBoundingBox meshes=%d accum.min=(%f,%f,%f) accum.max=(%f,%f,%f)",
+                 model.meshCount, accum.min.x, accum.min.y, accum.min.z, accum.max.x, accum.max.y, accum.max.z);
         accum.min = Vector3Add(accum.min, offset);
         accum.max = Vector3Add(accum.max, offset);
         bbox = accum;

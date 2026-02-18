@@ -40,6 +40,12 @@ public:
   //   void RemoveBody();
   void Update(const float dt_sec);
 
+  void SetGravity(const Vector3 &g) { gravity = g; }
+  Vector3 GetGravity() const { return gravity; }
+
+  // gravity in world-space units (m/s^2)
+  Vector3 gravity = Vector3{0, -9.8f, 0};
+
   std::vector<Body> bodies;
 };
 
@@ -59,5 +65,9 @@ struct CollisionPoint
   Body *bodyB;
 };
 
-bool Intersect(Body *bodyA, Body *bodyB, CollisionPoint &collisionPoint);
+// deltaTime: time window to sweep (seconds). Returns true if a collision
+// occurs within [0, deltaTime]. If true, `collisionPoint.impactTime` is
+// filled with the impact time (seconds) and world-space contact points are
+// set to positions at impact.
+bool Intersect(Body *bodyA, Body *bodyB, CollisionPoint &collisionPoint, float deltaTime);
 void ResolveContact(CollisionPoint &collisionPoint);

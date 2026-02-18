@@ -18,6 +18,11 @@ public:
     void Draw() override;
     void Unload() override;
 
+    // Expose player access for debug UI
+    Player* GetPlayer() { return &player; }
+    void SetWorldDebug(bool enabled) { worldDebug = enabled; if (worldModel) worldModel->SetDebug(worldDebug); }
+    bool IsWorldDebug() const { return worldDebug; }
+
 private:
     Hotones::Player player;
     Camera camera;

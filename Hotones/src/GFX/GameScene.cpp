@@ -17,6 +17,9 @@ GameScene::~GameScene()
 
 void GameScene::Init()
 {
+    // Ensure player starts at origin when the game scene loads
+    player.body.position = (Vector3){0.0f, 0.0f, 0.0f};
+
     camera.fovy = 60.0f;
     camera.projection = CAMERA_PERSPECTIVE;
     camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
@@ -38,8 +41,8 @@ void GameScene::Update()
 {
     player.Update();
 
-    // Toggle world debug visuals
-    if (IsKeyPressed(KEY_F1)) {
+    // Toggle world debug visuals (moved to F2 to reserve F1 for ImGui)
+    if (IsKeyPressed(KEY_F2)) {
         worldDebug = !worldDebug;
         if (worldModel) worldModel->SetDebug(worldDebug);
     }
@@ -73,7 +76,8 @@ void GameScene::DrawLevel()
     // Draw the main world model and its bounding box
     if (worldModel) {
         worldModel->Draw();
-        DrawBoundingBox(worldModel->GetBoundingBox(), RED);
+        // Draw per-mesh boxes in red so they align exactly with the F1 debug boxes
+        worldModel->DrawMeshBoundingBoxes(RED);
         if (worldDebug) worldModel->DrawDebug();
     }
 }
