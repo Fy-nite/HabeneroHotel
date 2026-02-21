@@ -2,6 +2,7 @@
 
 #include <GFX/Scene.hpp>
 #include <GFX/Player.hpp>
+#include <ECS/Registry.hpp>
 #include <memory>
 #include <raylib.h>
 
@@ -46,6 +47,7 @@ private:
     Camera                           m_camera   = {};
     std::shared_ptr<CollidableModel> m_world;
     Net::NetworkManager*             m_netMgr   = nullptr;
+    ECS::Registry                    m_registry;   ///< ECS world for this scene
 
     void DrawFallbackGround() const;
 };

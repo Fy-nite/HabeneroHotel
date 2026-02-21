@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include <lua.hpp>
 #include "../../include/Scripting/LuaLoader/Input.hpp"
+#include <Input/InputHandler.hpp>
 
 namespace Hotones::Scripting::LuaLoader {
 
@@ -9,21 +10,21 @@ namespace Hotones::Scripting::LuaLoader {
 static int l_isKeyDown(lua_State* L)
 {
     int key = (int)luaL_checkinteger(L, 1);
-    lua_pushboolean(L, IsKeyDown(key) ? 1 : 0);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsKeyDown(key) ? 1 : 0);
     return 1;
 }
 
 static int l_isKeyPressed(lua_State* L)
 {
     int key = (int)luaL_checkinteger(L, 1);
-    lua_pushboolean(L, IsKeyPressed(key) ? 1 : 0);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsKeyPressed(key) ? 1 : 0);
     return 1;
 }
 
 static int l_isKeyReleased(lua_State* L)
 {
     int key = (int)luaL_checkinteger(L, 1);
-    lua_pushboolean(L, IsKeyReleased(key) ? 1 : 0);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsKeyReleased(key) ? 1 : 0);
     return 1;
 }
 
@@ -32,20 +33,20 @@ static int l_isKeyReleased(lua_State* L)
 static int l_isMouseDown(lua_State* L)
 {
     int btn = (int)luaL_checkinteger(L, 1);
-    lua_pushboolean(L, IsMouseButtonDown(btn) ? 1 : 0);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsMouseDown(btn) ? 1 : 0);
     return 1;
 }
 
 static int l_isMousePressed(lua_State* L)
 {
     int btn = (int)luaL_checkinteger(L, 1);
-    lua_pushboolean(L, IsMouseButtonPressed(btn) ? 1 : 0);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsMousePressed(btn) ? 1 : 0);
     return 1;
 }
 
 static int l_getMousePos(lua_State* L)
 {
-    Vector2 p = GetMousePosition();
+    Vector2 p = Hotones::Input::InputHandler::Get().GetMousePos();
     lua_pushnumber(L, p.x);
     lua_pushnumber(L, p.y);
     return 2;
@@ -53,7 +54,7 @@ static int l_getMousePos(lua_State* L)
 
 static int l_getMouseDelta(lua_State* L)
 {
-    Vector2 d = GetMouseDelta();
+    Vector2 d = Hotones::Input::InputHandler::Get().GetMouseDelta();
     lua_pushnumber(L, d.x);
     lua_pushnumber(L, d.y);
     return 2;
@@ -61,7 +62,21 @@ static int l_getMouseDelta(lua_State* L)
 
 static int l_getMouseWheel(lua_State* L)
 {
-    lua_pushnumber(L, (lua_Number)GetMouseWheelMove());
+    lua_pushnumber(L, (lua_Number)Hotones::Input::InputHandler::Get().GetMouseWheel());
+    return 1;
+}
+
+static int l_isKeyPressedRepeat(lua_State* L)
+{
+    int key = (int)luaL_checkinteger(L, 1);
+    lua_pushboolean(L, Hotones::Input::InputHandler::Get().IsKeyPressedRepeat(key) ? 1 : 0);
+    return 1;
+}
+
+static int l_getChar(lua_State* L)
+{
+    int c = Hotones::Input::InputHandler::Get().GetCharPressed();
+    lua_pushinteger(L, c);
     return 1;
 }
 
@@ -73,11 +88,13 @@ void registerInput(lua_State* L)
         {"isKeyDown",      l_isKeyDown},
         {"isKeyPressed",   l_isKeyPressed},
         {"isKeyReleased",  l_isKeyReleased},
+        {"isKeyPressedRepeat", l_isKeyPressedRepeat},
         {"isMouseDown",    l_isMouseDown},
         {"isMousePressed", l_isMousePressed},
         {"getMousePos",    l_getMousePos},
         {"getMouseDelta",  l_getMouseDelta},
         {"getMouseWheel",  l_getMouseWheel},
+        {"getChar",        l_getChar},
         {nullptr, nullptr}
     };
 

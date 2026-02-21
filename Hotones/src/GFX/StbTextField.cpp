@@ -2,6 +2,7 @@
 // against our StbTextBuf string type and provides the StbTextField class.
 
 #include <GFX/StbTextField.hpp>
+#include <Input/Input.hpp>
 #include <cstring>
 #include <raylib.h>
 
@@ -77,11 +78,11 @@ void StbTextField::setText(const char* s) {
 }
 
 void StbTextField::UpdateInput() {
-    bool ctrl  = IsKeyDown(KEY_LEFT_CONTROL) || IsKeyDown(KEY_RIGHT_CONTROL);
-    bool shift = IsKeyDown(KEY_LEFT_SHIFT)   || IsKeyDown(KEY_RIGHT_SHIFT);
+    bool ctrl  = Hotones::Input::IsKeyDown(KEY_LEFT_CONTROL) || Hotones::Input::IsKeyDown(KEY_RIGHT_CONTROL);
+    bool shift = Hotones::Input::IsKeyDown(KEY_LEFT_SHIFT)   || Hotones::Input::IsKeyDown(KEY_RIGHT_SHIFT);
 
     auto feedKey = [&](int rlKey, int stbKey) {
-        if (IsKeyPressed(rlKey) || IsKeyPressedRepeat(rlKey)) {
+        if (Hotones::Input::IsKeyPressed(rlKey) || Hotones::Input::IsKeyPressedRepeat(rlKey)) {
             int k = stbKey | (shift ? STB_TEXTEDIT_K_SHIFT : 0);
             stb_textedit_key(&buf, &state, k);
         }
@@ -95,19 +96,19 @@ void StbTextField::UpdateInput() {
     feedKey(KEY_BACKSPACE, STB_TEXTEDIT_K_BACKSPACE);
 
     if (ctrl) {
-        if (IsKeyPressed(KEY_A)) {
+        if (Hotones::Input::IsKeyPressed(KEY_A)) {
             // Select all
             state.select_start = 0;
             state.select_end   = buf.len;
             state.cursor       = buf.len;
         }
-        if (IsKeyPressed(KEY_Z)) stb_textedit_key(&buf, &state, STB_TEXTEDIT_K_UNDO);
-        if (IsKeyPressed(KEY_Y)) stb_textedit_key(&buf, &state, STB_TEXTEDIT_K_REDO);
+        if (Hotones::Input::IsKeyPressed(KEY_Z)) stb_textedit_key(&buf, &state, STB_TEXTEDIT_K_UNDO);
+        if (Hotones::Input::IsKeyPressed(KEY_Y)) stb_textedit_key(&buf, &state, STB_TEXTEDIT_K_REDO);
     }
 
     // Typed characters
     int ch;
-    while ((ch = GetCharPressed()) != 0)
+    while ((ch = Hotones::Input::GetChar()) != 0)
         if (ch >= 32 && ch < 127)
             stb_textedit_key(&buf, &state, ch);
 }

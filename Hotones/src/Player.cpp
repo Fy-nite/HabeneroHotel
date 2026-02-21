@@ -1,5 +1,6 @@
 #include <GFX/Player.hpp>
 #include <GFX/CollidableModel.hpp>
+#include <Input/Input.hpp>
 #include <iostream>
 #include <cmath>
 #include <SFX/AudioSystem.hpp>
@@ -28,14 +29,14 @@ void Player::AttachWorld(std::shared_ptr<CollidableModel> world) {
 void Player::Update() {
     if (!m_attachedCamera) return;
 
-    Vector2 mouseDelta = GetMouseDelta();
+    Vector2 mouseDelta = Hotones::Input::GetMouseDelta();
     lookRotation.x -= mouseDelta.x * sensitivity.x;
     lookRotation.y += mouseDelta.y * sensitivity.y;
 
-    char sideway = (char)(IsKeyDown(KEY_D) - IsKeyDown(KEY_A));
-    char forward = (char)(IsKeyDown(KEY_W) - IsKeyDown(KEY_S));
-    bool crouching = IsKeyDown(KEY_LEFT_CONTROL);
-    bool jumpPressed = IsKeyDown(KEY_SPACE);
+    char sideway = (char)(Hotones::Input::IsKeyDown(KEY_D) - Hotones::Input::IsKeyDown(KEY_A));
+    char forward = (char)(Hotones::Input::IsKeyDown(KEY_W) - Hotones::Input::IsKeyDown(KEY_S));
+    bool crouching = Hotones::Input::IsKeyDown(KEY_LEFT_CONTROL);
+    bool jumpPressed = Hotones::Input::IsKeyDown(KEY_SPACE);
 
     TraceLog(LOG_INFO, "Player::UpdateBody input side=%d forward=%d jumpPressed=%d grounded=%d pos=(%f,%f,%f) vel=(%f,%f,%f)",
              sideway, forward, jumpPressed ? 1 : 0, body.isGrounded ? 1 : 0,

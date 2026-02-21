@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include <raymath.h>
+#include <Input/Input.hpp>
 #include <GFX/Player.hpp>
 #include <GFX/SceneManager.hpp>
 #include <GFX/LoadingScene.hpp>
@@ -259,6 +260,8 @@ int main(int argc, char** argv)
             TraceLog(LOG_TRACE, "Player.Update() finished");
         }
         TraceLog(LOG_TRACE, "SceneManager.Update() about to run (current=%s)", sceneMgr.GetCurrentName().c_str());
+        // Refresh input state before scenes/scripts run so Lua can query it
+        Hotones::Input::InputHandler::Get().Update();
         sceneMgr.Update();
         TraceLog(LOG_TRACE, "SceneManager.Update() finished (current=%s)", sceneMgr.GetCurrentName().c_str());
 

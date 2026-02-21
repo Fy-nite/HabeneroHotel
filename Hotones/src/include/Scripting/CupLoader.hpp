@@ -7,6 +7,7 @@
 struct lua_State;
 
 namespace Hotones::Net { class NetworkManager; }
+namespace Hotones       { class Player;          }
 
 namespace Hotones::Scripting {
 
@@ -77,6 +78,10 @@ public:
     // Lua library.  Safe to call before or after init().
     void setNetworkManager(Net::NetworkManager* nm);
 
+    // Provide (or update) the local Player pointer used by the `player.*`
+    // Lua library.  Safe to call before or after init().
+    void setLocalPlayer(Hotones::Player* player);
+
 private:
     // Push instance + method, call with args already on stack, handle errors.
     // nargs = number of extra arguments above the implicit `self`.
@@ -88,7 +93,8 @@ private:
     std::string            m_packageRoot; ///< package root directory
     int                    m_classRef;    ///< LUA_REGISTRY key of MainClass table; LUA_NOREF = none
     std::string            m_lastLuaError; ///< Last Lua error message
-    Net::NetworkManager*   m_netMgr = nullptr; ///< optional network manager for network.* API
+    Net::NetworkManager*   m_netMgr = nullptr;      ///< optional network manager for network.* API
+    Hotones::Player*       m_localPlayer = nullptr; ///< local player for player.* API
     // reload request flag handled in the implementation file
 };
 

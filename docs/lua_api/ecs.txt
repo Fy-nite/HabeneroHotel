@@ -1,0 +1,409 @@
+====== ecs ======
+
+Entity-Component-System (ECS) API.  Lets scripts spawn, query, and destroy
+game entities and attach data components to them at runtime.
+
+> **Availability:** Client (''ScriptedScene'') only.  All ''ecs.*'' calls are
+> silently ignored on the headless server (the registry is not initialised
+> there).  Guard server-only code with ''server.isServer()''.
+
+===== Core concepts =====
+
+An **entity** is a lightweight integer handle (type ''integer'' in Lua, an
+unsigned 32-bit value in C++).  On its own an entity carries no data; you
+attach **components** to it to give it behaviour.
+
+Components are opt-in and independent of each other.  Creating an entity with
+''ecs.create()'' gives you a completely blank object — no position, no health,
+no player controller.  You choose exactly which components to attach.
+
+The **player controller component** (''PlayerComponent'') is the only
+component that has engine-level side effects.  It must be explicitly added with
+''ecs.addPlayer()'' and links the entity to the engine's first-person player
+controller.  It is **never** attached automatically.
+
+===== Entity management =====
+
+==== ecs.create() ====
+
+Spawn a new blank entity.
+
+**Returns:** ''integer'' — The new entity id.
+
+<code lua>
+local e = ecs.create()
+ecs.setPos(e, 0, 1, 0)
+ecs.setTag(e, "Box")
+</code>
+
+----
+
+==== ecs.destroy(id) ====
+
+Destroy an entity and remove every component attached to it.  The id becomes
+invalid immediately; passing it to any other ''ecs.*'' function afterwards is
+a no-op.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id returned by ''ecs.create()''. |
+
+<code lua>
+ecs.destroy(e)
+</code>
+
+----
+
+==== ecs.isAlive(id) ====
+
+Check whether an entity still exists.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''boolean'' — ''true'' if the entity is alive.
+
+<code lua>
+if not ecs.isAlive(e) then
+    -- safely skip processing
+end
+</code>
+
+----
+
+===== Transform =====
+
+Position, scale, and velocity.  These components are created automatically
+the first time you call a setter on an entity that doesn't have one yet.
+
+==== ecs.setPos(id, x, y, z) ====
+
+Set the world-space position of an entity.
+
+For entities with a [[#player_controller|player controller component]] this
+also teleports the engine player immediately.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''x, y, z'' | number | World-space position. |
+
+<code lua>
+ecs.setPos(e, 10, 0, -5)
+</code>
+
+----
+
+==== ecs.getPos(id) ====
+
+Get the world-space position of an entity.
+
+For entities with a player controller, this returns the **live** player body
+position rather than a cached copy.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''number, number, number'' — ''x, y, z''.  Returns ''0, 0, 0'' if
+the entity has no transform and no player component.
+
+<code lua>
+local x, y, z = ecs.getPos(e)
+</code>
+
+----
+
+==== ecs.setScale(id, sx, sy, sz) ====
+
+Set the per-axis scale of an entity's transform.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''sx, sy, sz'' | number | Scale factors (''1.0'' = default). |
+
+<code lua>
+ecs.setScale(e, 2, 2, 2)   -- double size
+</code>
+
+----
+
+==== ecs.setVelocity(id, vx, vy, vz) ====
+
+Set the linear velocity of an entity (units per second).
+
+> **Note:** The ECS itself does not integrate velocity into position.  Write a
+> custom ''Update()'' loop or use the engine physics system to consume this
+> value.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''vx, vy, vz'' | number | Velocity vector. |
+
+----
+
+==== ecs.getVelocity(id) ====
+
+Get the linear velocity of an entity.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''number, number, number'' — ''vx, vy, vz''.  Returns ''0, 0, 0''
+if the entity has no velocity component.
+
+----
+
+===== Tag =====
+
+==== ecs.setTag(id, name) ====
+
+Attach a human-readable name to an entity.  Replaces any existing tag.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''name'' | string | Tag string. |
+
+<code lua>
+ecs.setTag(e, "Enemy/Grunt")
+</code>
+
+----
+
+==== ecs.getTag(id) ====
+
+Get the tag string attached to an entity.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''string'' — The tag, or an empty string ''""'' if none is set.
+
+<code lua>
+local tag = ecs.getTag(e)
+if tag == "Enemy/Grunt" then
+    ecs.damage(e, 10)
+end
+</code>
+
+----
+
+===== Health =====
+
+==== ecs.addHealth(id, maxHp) ====
+
+Add a health component to an entity.  ''current'' is initialised to ''maxHp''.
+If the entity already has a health component its values are reset to ''maxHp''.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''maxHp'' | number | Maximum (and starting) HP. |
+
+<code lua>
+ecs.addHealth(grunt, 100)
+</code>
+
+----
+
+==== ecs.getHealth(id) ====
+
+Get the current and maximum health of an entity.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''number, number'' — ''current, max''.  Returns ''0, 0'' if the
+entity has no health component.
+
+<code lua>
+local hp, maxHp = ecs.getHealth(e)
+render.drawText(string.format("HP: %d / %d", hp, maxHp), 10, 10)
+</code>
+
+----
+
+==== ecs.damage(id, amount) ====
+
+Reduce an entity's health by ''amount''.  Clamps to zero (will not go
+negative).  No-op if the entity has no health component.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''amount'' | number | Damage to apply (positive number). |
+
+<code lua>
+ecs.damage(grunt, 25)
+if ecs.isDead(grunt) then
+    ecs.destroy(grunt)
+end
+</code>
+
+----
+
+==== ecs.heal(id, amount) ====
+
+Increase an entity's health by ''amount''.  Clamps to ''max''.  No-op if the
+entity has no health component.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''amount'' | number | HP to restore (positive number). |
+
+----
+
+==== ecs.isDead(id) ====
+
+Check whether an entity's health has reached zero.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''boolean'' — ''true'' if the entity has a health component and
+''current <= 0''.  Returns ''false'' for entities without a health component.
+
+----
+
+===== Lifetime =====
+
+Entities with a lifetime component are **automatically destroyed** by the
+engine at the end of the tick in which their timer expires.  You do not need
+to call ''ecs.destroy()'' yourself.
+
+==== ecs.setLifetime(id, seconds) ====
+
+Attach (or replace) a lifetime component.  The entity will be auto-destroyed
+after ''seconds'' seconds.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+| ''seconds'' | number | Time until automatic destruction. |
+
+<code lua>
+-- Bullet that disappears after 3 seconds
+local bullet = ecs.create()
+ecs.setPos(bullet, px, py, pz)
+ecs.setVelocity(bullet, dx * 50, dy * 50, dz * 50)
+ecs.setLifetime(bullet, 3.0)
+</code>
+
+----
+
+==== ecs.getLifetime(id) ====
+
+Get the remaining lifetime of an entity.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''number'' — Seconds remaining, or ''0'' if the entity has no
+lifetime component.
+
+----
+
+===== Player controller =====
+
+The player controller component links an entity to the engine's built-in
+first-person player.  It is **never attached automatically** — you must call
+''ecs.addPlayer()'' explicitly.
+
+Only one entity should hold this component at a time.  Giving two entities a
+player component in the same scene is unsupported.
+
+==== ecs.addPlayer(id) ====
+
+Attach a player controller component to an entity and link it to the engine
+player.  Also ensures the entity has a ''TransformComponent'' so ''ecs.getPos''
+works immediately.
+
+Does nothing if the entity already owns a player component.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+<code lua>
+local me = ecs.create()
+ecs.addPlayer(me)
+ecs.addHealth(me, 100)
+ecs.setTag(me, "LocalPlayer")
+</code>
+
+----
+
+==== ecs.hasPlayer(id) ====
+
+Check whether an entity has a player controller component.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+**Returns:** ''boolean''
+
+----
+
+==== ecs.removePlayer(id) ====
+
+Remove the player controller component from an entity.  The engine player
+continues to run normally; it is merely no longer linked to this entity.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id. |
+
+----
+
+==== ecs.setPlayerBhop(id, enabled) ====
+
+Enable or disable Source-style bunny-hopping on the linked player controller.
+When enabled, the player retains speed between jumps.
+
+^ Parameter ^ Type ^ Description ^
+| ''id'' | integer | Entity id (must have a player controller component). |
+| ''enabled'' | boolean | ''true'' to enable bhop, ''false'' to disable. |
+
+No-op if the entity has no player component.
+
+<code lua>
+ecs.setPlayerBhop(me, true)
+</code>
+
+----
+
+===== Extended example =====
+
+<code lua>
+-- Spawn an enemy at a fixed position with health and a 60-second fuse.
+local function spawnGrunt(x, y, z)
+    local e = ecs.create()
+    ecs.setPos(e, x, y, z)
+    ecs.setTag(e, "Enemy/Grunt")
+    ecs.addHealth(e, 80)
+    ecs.setLifetime(e, 60)
+    return e
+end
+
+-- Give the local player a health pool and opt-in to bunny-hopping.
+local playerEntity = ecs.create()
+ecs.addPlayer(playerEntity)
+ecs.addHealth(playerEntity, 100)
+ecs.setTag(playerEntity, "LocalPlayer")
+ecs.setPlayerBhop(playerEntity, false)
+
+-- In Update(), check for dead enemies.
+function MyGame:Update()
+    if ecs.isAlive(grunt) and ecs.isDead(grunt) then
+        ecs.destroy(grunt)
+        grunt = nil
+    end
+
+    -- Read the live player position from the ECS.
+    local x, y, z = ecs.getPos(playerEntity)
+end
+
+-- Show a HUD health bar in Draw().
+function MyGame:Draw()
+    if ecs.isAlive(playerEntity) then
+        local hp, maxHp = ecs.getHealth(playerEntity)
+        local barW = math.floor((hp / maxHp) * 200)
+        render.drawRect(10, GetScreenHeight() - 30, 200, 14, 60, 60, 60, 200)
+        render.drawRect(10, GetScreenHeight() - 30, barW, 14, 60, 220, 60, 255)
+        render.drawText(string.format("%d / %d", hp, maxHp), 10,
+                        GetScreenHeight() - 50, 18)
+    end
+end
+</code>

@@ -13,6 +13,7 @@ Scripts are loaded from ''init.lua'' at the root of the pack directory.  The eng
 ===== Libraries =====
 
   * [[projects:habenero:lua:audio|audio]] — Sound loading and playback.
+  * [[projects:habenero:lua:ecs|ecs]] — Entity-Component-System: spawn entities, attach components, query and destroy them at runtime.
   * [[projects:habenero:lua:input|input]] — Keyboard, mouse, and constants.
   * [[projects:habenero:lua:mesh|mesh]] — 3-D primitive drawing (call from ''draw3D'').
   * [[projects:habenero:lua:render|render]] — 2-D / HUD drawing (call from ''Draw'').

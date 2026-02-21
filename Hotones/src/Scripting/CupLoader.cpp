@@ -14,6 +14,8 @@
 #include "../include/Scripting/LuaLoader/Lighting.hpp"
 #include "../include/Scripting/LuaLoader/Players.hpp"
 #include "../include/Scripting/LuaLoader/Physics.hpp"
+#include "../include/Scripting/LuaLoader/LocalPlayer.hpp"
+#include "../include/Scripting/LuaLoader/ECS.hpp"
 #include <server/NetworkManager.hpp>
 
 #include <lua.hpp>
@@ -91,6 +93,16 @@ void CupLoader::setNetworkManager(Net::NetworkManager* nm)
     Hotones::Scripting::LuaLoader::setPlayersNetworkManager(nm);
 }
 
+void CupLoader::setLocalPlayer(Hotones::Player* player)
+{
+    m_localPlayer = player;
+    // Update the LocalPlayer library immediately; the binding reads through a
+    // static pointer so existing Lua states pick up the new player at once.
+    Hotones::Scripting::LuaLoader::setLocalPlayer(player);
+    // Keep the ECS library's player pointer in sync as well.
+    Hotones::Scripting::LuaLoader::setECSLocalPlayer(player);
+}
+
 CupLoader::~CupLoader()
 {
     if (L) {
@@ -114,7 +126,8 @@ bool CupLoader::init()
     Hotones::Scripting::LuaLoader::registerLighting(L);
     Hotones::Scripting::LuaLoader::registerPlayers(L, m_netMgr);
     Hotones::Scripting::LuaLoader::registerPhysics(L);
-
+    Hotones::Scripting::LuaLoader::registerLocalPlayer(L);
+    Hotones::Scripting::LuaLoader::registerECS(L);
 
     // Register timing globals so Lua scripts work in both headless and windowed modes
     g_luaTimingInit = false; // reset on each new Lua state
@@ -244,6 +257,11 @@ bool CupLoader::reload()
     Hotones::Scripting::LuaLoader::registerServer(newL);
     Hotones::Scripting::LuaLoader::registerMeshGen(newL);
     Hotones::Scripting::LuaLoader::registerLighting(newL);
+    // NOTE: registerPlayers, registerPhysics, and registerLocalPlayer must be
+    // included here so they remain available after a reloadPack() call.
+    Hotones::Scripting::LuaLoader::registerPlayers(newL, m_netMgr);
+    Hotones::Scripting::LuaLoader::registerPhysics(newL);
+    Hotones::Scripting::LuaLoader::registerLocalPlayer(newL);
 
     // Timing globals
     g_luaTimingInit = false;
