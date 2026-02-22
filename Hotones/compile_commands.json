@@ -1,257 +1,262 @@
 [
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/main.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/main.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/main.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/main.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/main.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/main.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/PakRegistry.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/PakRegistry.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/PakRegistry.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Player.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Player.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Player.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Player.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Player.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Player.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/PakRegistry.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/PakRegistry.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/PakRegistry.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Assets/AssetLoader.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Assets_AssetLoader.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Assets/AssetLoader.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/SFX/AudioSystem.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/SFX_AudioSystem.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/SFX/AudioSystem.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Assets/PackScanner.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Assets_PackScanner.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Assets/PackScanner.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/SFX/SoundBus.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/SFX_SoundBus.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/SFX/SoundBus.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/AssetPath.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_AssetPath.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/AssetPath.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Headless/NetworkManager.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Headless_NetworkManager.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Headless/NetworkManager.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/bsp.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_bsp.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/bsp.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Headless/Server.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Headless_Server.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Headless/Server.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/BuiltInScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_BuiltInScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/BuiltInScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Assets/PackScanner.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Assets_PackScanner.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Assets/PackScanner.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/CollidableModel.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_CollidableModel.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/CollidableModel.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Assets/AssetLoader.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Assets_AssetLoader.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Assets/AssetLoader.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/GameScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_GameScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/GameScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/miniz.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_miniz.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/miniz.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/LightingSystem.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_LightingSystem.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/LightingSystem.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/MainMenuScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_MainMenuScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/MainMenuScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/LoadingScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_LoadingScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/LoadingScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/SimpleScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_SimpleScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/SimpleScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/MainMenuScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_MainMenuScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/MainMenuScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/CollidableModel.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_CollidableModel.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/CollidableModel.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/Renderer.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_Renderer.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/Renderer.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_BuiltInScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/SceneImporter.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_SceneImporter.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/SceneImporter.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/AssetPath.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_AssetPath.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/AssetPath.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/ScriptedScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_ScriptedScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/ScriptedScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/Renderer.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_Renderer.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/Renderer.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/SimpleScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_SimpleScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/SimpleScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/bsp.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_bsp.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/bsp.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/StbTextField.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_StbTextField.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/StbTextField.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/StbTextField.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_StbTextField.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/StbTextField.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/TransitionScene.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_TransitionScene.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/TransitionScene.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LayoutEngine.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_LayoutEngine.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LayoutEngine.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/UIManager.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_UIManager.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/UIManager.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LightingSystem.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_LightingSystem.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LightingSystem.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/World.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_World.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/World.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LoadingScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_LoadingScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/LoadingScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Headless/NetworkManager.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Headless_NetworkManager.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Headless/NetworkManager.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/SceneImporter.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_SceneImporter.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/SceneImporter.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Headless/Server.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Headless_Server.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Headless/Server.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/World.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_World.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/World.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/miniz.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_miniz.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/miniz.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/TransitionScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_TransitionScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/TransitionScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Input/InputHandler.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Input_InputHandler.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Input/InputHandler.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/GameScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_GameScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/GameScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Physics/physics.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Physics_physics.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Physics/physics.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/UIManager.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_UIManager.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/UIManager.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Physics/PhysicsSystem.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Physics_PhysicsSystem.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Physics/PhysicsSystem.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/ScriptedScene.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_ScriptedScene.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/ScriptedScene.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/CupLoader.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_CupLoader.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/CupLoader.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/CupLoader.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_CupLoader.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/CupLoader.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/CupPackage.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_CupPackage.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/CupPackage.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/CupPackage.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_CupPackage.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/CupPackage.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/SFX/AudioSystem.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/SFX_AudioSystem.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/SFX/AudioSystem.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Input/InputHandler.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Input_InputHandler.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Input/InputHandler.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/SFX/SoundBus.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/SFX_SoundBus.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/SFX/SoundBus.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Physics/PhysicsSystem.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Physics_PhysicsSystem.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Physics/PhysicsSystem.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/imgui.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_imgui.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/imgui.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Physics/physics.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Physics_physics.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Physics/physics.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/imgui_demo.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_imgui_demo.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/imgui_demo.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_widgets.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_imgui_widgets.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_widgets.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/imgui_draw.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_imgui_draw.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/imgui_draw.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_demo.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_imgui_demo.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_demo.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/imgui_tables.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_imgui_tables.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/imgui_tables.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_draw.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_imgui_draw.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_draw.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/imgui_widgets.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_imgui_widgets.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/imgui_widgets.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_imgui.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/include/imgui/rlImGui.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/include_imgui_rlImGui.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/include/imgui/rlImGui.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_tables.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_imgui_tables.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/imgui_tables.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Audio.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Audio.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Audio.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/rlImGui.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/include_imgui_rlImGui.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/include/imgui/rlImGui.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ECS.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_ECS.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ECS.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/MeshGen.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_MeshGen.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/MeshGen.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Input.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Input.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Input.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Input.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Input.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Input.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Lighting.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Lighting.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Lighting.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Players.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Players.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Players.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/LocalPlayer.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_LocalPlayer.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/LocalPlayer.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Lighting.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Lighting.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Lighting.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/MeshGen.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_MeshGen.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/MeshGen.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Physics.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Physics.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Physics.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Physics.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Physics.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Physics.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/LocalPlayer.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_LocalPlayer.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/LocalPlayer.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Players.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Players.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Players.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ECS.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_ECS.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ECS.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Rendering.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Rendering.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Rendering.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Audio.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Audio.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Audio.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ServerLib.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_ServerLib.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ServerLib.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Rendering.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_Rendering.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/Rendering.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/CharacterCustomizer.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_CharacterCustomizer.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/CharacterCustomizer.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ServerLib.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/Scripting_LuaLibraries_ServerLib.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/Scripting/LuaLibraries/ServerLib.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Editor.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_Editor.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Editor.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Playing.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_Playing.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Playing.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/MainMenu.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_MainMenu.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/MainMenu.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/CharacterCustomizer.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_CharacterCustomizer.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/CharacterCustomizer.cpp"
   },
   {
-    "directory": "D:/HabeneroHotel/Hotones",
-    "command": "g\u002B\u002B -c -g -O0 \u0022D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Playing.cpp\u0022 -o \u0022D:/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_Playing.cpp.o\u0022 -lraylib -llua -lassimp -lws2_32 -I\u0022src/include\u0022 --std=c\u002B\u002B20",
-    "file": "D:/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Playing.cpp"
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Editor.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_Editor.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/Editor.cpp"
+  },
+  {
+    "directory": "/home/charlie/git/HabeneroHotel/Hotones",
+    "command": "g\u002B\u002B -c -g -O0 \u0022/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/MainMenu.cpp\u0022 -o \u0022/home/charlie/git/HabeneroHotel/Hotones/obj/GFX_BuiltInGamePacks_GameScenes_OverTone_MainMenu.cpp.o\u0022 -lraylib -llua -lassimp -I\u0022src/include\u0022 --std=c\u002B\u002B20",
+    "file": "/home/charlie/git/HabeneroHotel/Hotones/src/GFX/BuiltInGamePacks/GameScenes/OverTone/MainMenu.cpp"
   }
 ]

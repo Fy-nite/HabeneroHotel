@@ -1,11 +1,48 @@
 #include <GFX/UIManager.hpp>
 #include <raylib.h>
+#include <memory>
+#include "GFX/LayoutEngine.hpp"
 
 namespace Hotones::GFX {
 
 UIManager& UIManager::Get() {
     static UIManager instance;
     return instance;
+}
+
+// --- Layout integration -----------------------------------------------------
+Hotones::GFX::UIElement* UIManager::CreateLabel(const char* text, int fs, Color col) {
+    if (fs == 0) fs = theme.fontSizeLabel;
+    if (col.a == 0 && col.r == 0 && col.g == 0 && col.b == 0) col = theme.textDim;
+    auto lbl = std::make_unique<Hotones::GFX::LabelElement>(std::string(text), fs, col);
+    Hotones::GFX::UIElement* ptr = lbl.get();
+    ownedElements.push_back(std::move(lbl));
+    return ptr;
+}
+
+Hotones::GFX::LayoutBox* UIManager::CreateLayout(Hotones::GFX::LayoutBox::Direction dir, int spacing, int padding) {
+    auto box = std::make_unique<Hotones::GFX::LayoutBox>(dir, spacing, padding);
+    Hotones::GFX::LayoutBox* ptr = box.get();
+    ownedElements.push_back(std::move(box));
+    return ptr;
+}
+
+Hotones::GFX::SpacerElement* UIManager::CreateSpacer(int height) {
+    auto sp = std::make_unique<Hotones::GFX::SpacerElement>(height);
+    Hotones::GFX::SpacerElement* ptr = static_cast<Hotones::GFX::SpacerElement*>(sp.get());
+    ownedElements.push_back(std::move(sp));
+    return ptr;
+}
+
+void UIManager::SetRoot(Hotones::GFX::UIElement* root) {
+    rootElement = root;
+}
+
+void UIManager::RenderLayout(int x, int y, int w, int h) const {
+    if (!rootElement) return;
+    Hotones::GFX::UISize s = rootElement->Measure(w, h);
+    rootElement->Layout(x, y, w, h);
+    rootElement->Draw();
 }
 
 // ── Button ────────────────────────────────────────────────────────────────────

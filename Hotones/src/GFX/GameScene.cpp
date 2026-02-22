@@ -22,7 +22,7 @@ void GameScene::Init()
 
     // Ensure player starts at origin when the game scene loads
     player.body.position = (Vector3){0.0f, 0.0f, 0.0f};
-
+    
     camera.fovy = 60.0f;
     camera.projection = CAMERA_PERSPECTIVE;
     camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
@@ -50,10 +50,9 @@ void GameScene::Update()
         if (worldModel) worldModel->SetDebug(worldDebug);
     }
 
-    // Example: check collision with player position
-    if (worldModel && worldModel->CheckCollision(player.body.position)) {
-        // TraceLog(LOG_INFO, "Player colliding with world!");
-    }
+    // if (worldModel && worldModel->CheckCollision(player.body.position)) {
+    //     TraceLog(LOG_INFO, "Player colliding with world!");
+    // }
 }
 
 void GameScene::Draw()

@@ -2,6 +2,9 @@
 
 #include <raylib.h>
 #include <string>
+#include <memory>
+#include <vector>
+#include "GFX/LayoutEngine.hpp"
 
 namespace Hotones::GFX {
 
@@ -73,8 +76,24 @@ public:
     void Title(const char* text, int screenW, int y = 50,
                int fs = 0, Color col = {0,0,0,0}) const;
 
+    // --- Layout integration -------------------------------------------------
+    // CreateLabel: owned by UIManager, returns pointer for composition
+    Hotones::GFX::UIElement* CreateLabel(const char* text, int fs = 0, Color col = {0,0,0,0});
+    // Create a spacer element with given height (reserved area)
+    Hotones::GFX::SpacerElement* CreateSpacer(int height = 16);
+    // CreateLayout: create a LayoutBox container (owned)
+    Hotones::GFX::LayoutBox* CreateLayout(Hotones::GFX::LayoutBox::Direction dir = Hotones::GFX::LayoutBox::Direction::Vertical,
+                                          int spacing = 4, int padding = 4);
+    // Set the root element to render
+    void SetRoot(Hotones::GFX::UIElement* root);
+    // Render the root element within the given rectangle (measure, layout, draw)
+    void RenderLayout(int x, int y, int w, int h) const;
+
 private:
     UIManager() = default;
+    // Owned UIElements
+    std::vector<std::unique_ptr<Hotones::GFX::UIElement>> ownedElements;
+    Hotones::GFX::UIElement* rootElement = nullptr;
 };
 
 } // namespace Hotones::GFX
